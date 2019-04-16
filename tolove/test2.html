@@ -1,0 +1,169 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用图案填充形状</title>
+<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+window.addEventListener('load',eventWindowLoaded,false);
+function eventWindowLoaded(){
+    canvasApp();
+}
+function canvasSupport(){
+    return Modernizr.canvas;
+}
+function canvasApp(){
+    if(!canvasSupport()){
+        return;
+    }else{
+        var theCanvas = document.getElementById('canvas')
+        var context = theCanvas.getContext("2d")
+
+    } 
+    drawScreen();
+    function drawScreen(){
+        var fillImg=new Image();
+        fillImg.src='sy-524.jpg';
+        fillImg.onload=function(){
+
+         //简单的onload
+          //图片填充的4种类型：repeat,no-repeat,repeat-x,repeat-y;
+          //createPattern()填充图像函数，一个图像的实例，一个填充的类型
+             
+            var fillPattern = context.createPattern(fillImg,'repeat-x');
+            var fillPattern1 = context.createPattern(fillImg,'repeat-y');
+            var fillPattern2 = context.createPattern(fillImg,'repeat');
+            context.fillStyle=fillPattern;
+            context.fillRect(0,0,100,20);
+            context.fillStyle=fillPattern1;
+            context.fillRect(0,10,100,20);
+            context.fillStyle=fillPattern2;
+            context.fillRect(0,60,100,10);
+            }
+        
+     }
+    
+}
+
+
+</script>
+<canvas id="canvas" width="500" height="500">
+</canvas>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>七巧板</title>
+    <style>
+        #div1{
+            width: 0px;
+            height: 0px;
+            border-left:50px solid blue ;
+            border-right: 50px solid transparent ; /*  transparent:透明*/
+            border-top: 50px solid transparent ;
+            border-bottom: 50px solid transparent ;
+
+        }
+        #div2{
+            width: 0px;
+            height: 0px;
+            border-left:50px solid transparent ;
+            border-right: 50px solid transparent ; /*  transparent:透明*/
+            border-top: 50px solid transparent ;
+            border-bottom: 50px solid green ;
+
+        }
+        #div3{
+            width: 0px;
+            height: 0px;
+            border-left:25px solid transparent ;
+            border-right: 25px solid gold ; /*  transparent:透明*/
+            border-top: 25px solid gold ;
+            border-bottom: 25px solid transparent ;
+
+        }
+        #div4{
+            width: 0px;
+            height: 0px;
+            border-left:25px solid transparent ;
+            border-right: 25px solid orangered ; /*  transparent:透明*/
+            border-top: 25px solid transparent ;
+            border-bottom: 25px solid transparent ;
+
+        }
+        .div5{
+            width: 0px;
+            height: 0px;
+            border-left:25px solid transparent ;
+            border-right: 25px solid transparent ; /*  transparent:透明*/
+            border-bottom: 25px solid red ;
+            border-top: 25px solid transparent ;
+
+
+        }
+        .div5_1{
+            width: 0px;
+            height: 0px;
+            border-left:25px solid transparent ;
+            border-right: 25px solid transparent ; /*  transparent:透明*/
+            border-bottom: 25px solid transparent ;
+            border-top: 25px solid red ;
+
+
+        }
+        #div6{
+              width: 0px;
+              height: 0px;
+              border-left:25px solid transparent ;
+              border-right: 25px solid transparent ; /*  transparent:透明*/
+              border-bottom: 25px solid transparent ;
+              border-top: 25px solid dodgerblue ;
+
+
+          }
+        .div7{
+             width: 0px;
+             height: 0px;
+             border-left:12.5px solid transparent ;
+             border-right: 12.5px solid transparent ; /*  transparent:透明*/
+             border-bottom: 25px solid transparent ;
+             border-top: 25px solid black ;
+
+
+         }
+        .div8{
+            width: 0px;
+            height: 0px;
+            border-left:12.5px solid transparent ;
+            border-right: 12.5px solid transparent ; /*  transparent:透明*/
+            border-bottom: 25px solid black ;
+            border-top: 25px solid transparent ;
+
+
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<br>
+<div id="div3"></div>
+<br>
+<div id="div4 "></div>
+<br>
+<div class="div5 div5_1"></div>
+<!-- <div id="div5_1"></div> -->
+<br>
+<div id="div6"></div>
+
+<br>
+<div class="div7  div8"></div>
+</body>
+</html>
